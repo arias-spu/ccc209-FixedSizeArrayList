@@ -1,3 +1,14 @@
+/**************************************************
+Class List:         Abstract class that represents
+                    the ADT List, this will be the
+                    base class of all List
+                    implementations. Methods
+                    Size() and IsEmpty() are defined
+                    here and don't need to be
+                    overloaded
+Author:             Carlos R. Arias
+Date:               2018 - 07 - 16
+**************************************************/
 #pragma once
 
 #include "object.h"

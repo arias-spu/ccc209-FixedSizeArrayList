@@ -1,3 +1,11 @@
+/**************************************************
+Class Integer:      Wrapper class to represent an
+                    int with a class derived
+                    from object
+Author:             Carlos R. Arias
+Date:               2018 - 07 - 16
+**************************************************/
+
 #pragma once
 
 #include "object.h"

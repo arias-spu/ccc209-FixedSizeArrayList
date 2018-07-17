@@ -1,3 +1,12 @@
+/**************************************************
+Main Program:       Main class to test the program
+                    with output directed to cout.
+Author:             Carlos R. Arias
+Date:               2018 - 07 - 16
+Issue:              Should it have a menu for
+                    testing?
+**************************************************/
+
 #include "integer.h"
 #include "fsarraylist.h"
 

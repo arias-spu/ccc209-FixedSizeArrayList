@@ -1,3 +1,10 @@
+/**************************************************
+Class Character:    Wrapper class to represent a
+                    character with a class derived
+                    from object
+Author:             Carlos R. Arias
+Date:               2018 - 07 - 16
+**************************************************/
 #pragma once
 
 #include "object.h"

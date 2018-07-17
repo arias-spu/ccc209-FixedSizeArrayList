@@ -1,3 +1,10 @@
+/**************************************************
+Class FSArrayList:  Implementation of ADT List
+                    using a Fixed Size Array 
+Author:             Carlos R. Arias
+Date:               2018 - 07 - 16
+**************************************************/
+
 #pragma once
 
 #include "object.h"
