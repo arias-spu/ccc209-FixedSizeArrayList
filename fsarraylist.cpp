@@ -35,6 +35,8 @@ bool FSArrayList::Equals(const Object* rhs)const{
     if (rhs == this)
         return true;
     const FSArrayList* other = dynamic_cast<const FSArrayList*>(rhs);
+    if (other->Size() != Size())
+        return false;
     for (size_t i = 0; i < _size; i++) {
         if (!Get(i)->Equals(other->Get(i)))
             return false;
