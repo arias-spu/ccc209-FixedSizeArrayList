@@ -28,11 +28,11 @@ FSArrayList::~FSArrayList(){
 }
 
 bool FSArrayList::Equals(const Object* rhs)const{
-    if (other == nullptr)
+    if (rhs == nullptr)
         return false;
-    if (typeid(*other) != typeid(*this))
+    if (typeid(*rhs) != typeid(*this))
         return false;
-    if (other == this)
+    if (rhs == this)
         return true;
     FSArrayList* other = dynamic_cast<FSArrayList*>(rhs);
     for (size_t i = 0; i < _size; i++) {
