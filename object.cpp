@@ -28,5 +28,5 @@ bool Object::Equals(const Object* other)const{
         return false;
 }
 Object::~Object(){
-    
+
 }

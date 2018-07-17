@@ -18,7 +18,7 @@ FSArrayList::FSArrayList(const FSArrayList& rhs){
 
 }
 FSArrayList FSArrayList::operator=(const FSArrayList& rhs){
-
+    return FSArrayList(0);
 }
 FSArrayList::~FSArrayList(){
     for (size_t i = 0; i < _size; i++) {
@@ -34,9 +34,9 @@ bool FSArrayList::Equals(const Object* rhs)const{
         return false;
     if (rhs == this)
         return true;
-    FSArrayList* other = dynamic_cast<FSArrayList*>(rhs);
+    const FSArrayList* other = dynamic_cast<const FSArrayList*>(rhs);
     for (size_t i = 0; i < _size; i++) {
-        if (!Get(i).Equals(other->Get(i)))
+        if (!Get(i)->Equals(other->Get(i)))
             return false;
     }
     return true;
@@ -51,7 +51,7 @@ bool FSArrayList::Insert(Object* element, size_t position){
         return false;
     // Push elements if necessary
     for (size_t i = _size; i > position ; i--) {
-        _data[i] == _data[i - 1];
+        _data[i] = _data[i - 1];
     }
     // Insert the element
     _data[position] = element;
@@ -63,16 +63,16 @@ bool FSArrayList::Remove(size_t position){
     if (position >= _size)
         return false;
     // Separating the element to remove
-    Object* temporal = data[position];
-    data[position] = nullptr;
+    Object* temporal = _data[position];
+    _data[position] = nullptr;
     // Pushing the elements if necessary
     for (size_t i = position; i < _size - 1; i++) {
-        data[i] = data[i + 1];
+        _data[i] = _data[i + 1];
     }
     // Set to null the "last" element, just copied
     // to the previous element
-    data[_size - 1] = nullptr;
-    size--;
+    _data[_size - 1] = nullptr;
+    _size--;
     // release the memory
     delete temporal;
     return true;

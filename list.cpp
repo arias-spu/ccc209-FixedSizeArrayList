@@ -18,7 +18,7 @@ size_t List::Size()const{
 bool List::IsEmpty()const{
     return _size == 0;
 }
-string List::ToStrig()const{
+string List::ToString()const{
     stringstream retVal;
     retVal << "[";
     for (size_t i = 0; i < _size; i++) {

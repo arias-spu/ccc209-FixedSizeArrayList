@@ -18,6 +18,7 @@ public:
     Integer(int = 0);
     virtual string ToString()const;
     virtual bool Equals(const Object*)const;
+    int GetValue()const;
 };
 
 Integer::Integer(int value): _value(value){
@@ -28,6 +29,9 @@ string Integer::ToString()const{
     retVal << _value;
     return retVal.str();
 }
+int Integer::GetValue()const{
+    return _value;
+}
 bool Integer::Equals(const Object* rhs)const{
     if (rhs == nullptr)
         return false;
@@ -35,8 +39,8 @@ bool Integer::Equals(const Object* rhs)const{
         return false;
     if (rhs == this)
         return true;
-    Integer* other = dynamic_cast<Integer*>(rhs);
-    if (other->_value == _value)
+    const Integer* other = dynamic_cast<const Integer*>(rhs);
+    if (other->GetValue() == _value)
         return true;
     else
         return false;
@@ -58,7 +62,7 @@ int main(int argc, char* argv[]){
     cout << list.ToString() << endl;
     cout << list.Insert(new Integer(-2), 0) << endl;
     cout << list.ToString() << endl;
-    
+
 
     return 0;
 }
