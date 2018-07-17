@@ -4,7 +4,7 @@
 
 class List: public Object{
 protected:
-    size_t size;
+    size_t _size;
 public:
     List();
     virtual ~List();
@@ -13,7 +13,7 @@ public:
     virtual bool Insert(Object*, size_t) = 0;
     virtual bool Remove(size_t) = 0;
     virtual Object* Get(size_t)const = 0;
-    virtual int IndexOf(Object*)const = 0;
+    virtual int IndexOf(const Object*)const = 0;
     size_t Size()const;
     bool IsEmpty()const;
 };
