@@ -9,8 +9,9 @@ using std::string;
 class Character: public Object{
     char _value;
 public:
-    Character(int = 0);
+    Character(char = 0);
     virtual string ToString()const;
     virtual bool Equals(const Object*)const;
     char GetValue()const;
+    void SetValue(char);
 };

@@ -1,22 +1,28 @@
-array:	fsarraylist main object list
-	g++ fsarraylist.o main.o object.o list.o -o array
+array:	fsarraylist.o main.o object.o list.o integer.o
+	g++ fsarraylist.o main.o object.o list.o integer.o -o array
 
-fsarraylist: fsarraylist.cpp fsarraylist.h list.h list.cpp object.h object.cpp
+fsarraylist.o: fsarraylist.cpp fsarraylist.h
 	g++ -c fsarraylist.cpp
 
-list:	list.h list.cpp object.h object.cpp
+list.o:	list.h list.cpp
 	g++ -c list.cpp
 
-object:	object.h object.cpp
+object.o:	object.h object.cpp
 	g++ -c object.cpp
 
-main:	main.cpp fsarraylist.h fsarraylist.cpp list.h list.cpp object.h object.cpp
+main.o:	main.cpp
 	g++ -c main.cpp
 
-unittest:	fsarraylist test object list
-	g++ fsarraylist.o test.o object.o list.o -o unittest
+unittest:	fsarraylist.o object.o list.o integer.o character.o test.o
+	g++ fsarraylist.o unittest.o object.o list.o integer.o character.o -o unittest
 
-test:	test.cpp fsarraylist.h fsarraylist.cpp list.h list.cpp object.h object.cpp
+integer.o:	integer.h integer.cpp
+	g++ -c integer.cpp
+
+character.o:	character.h character.cpp
+		g++ -c character.cpp
+
+test.o:	unittest.cpp
 	g++ -c unittest.cpp
 
 clean:

@@ -19,6 +19,9 @@ string Character::ToString()const{
 char Character::GetValue()const{
     return _value;
 }
+void Character::SetValue(char value){
+    _value = value;
+}
 bool Character::Equals(const Object* rhs)const{
     if (rhs == nullptr)
         return false;

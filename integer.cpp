@@ -19,6 +19,9 @@ string Integer::ToString()const{
 int Integer::GetValue()const{
     return _value;
 }
+void Integer::SetValue(int value){
+    _value = value;
+}
 bool Integer::Equals(const Object* rhs)const{
     if (rhs == nullptr)
         return false;

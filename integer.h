@@ -13,4 +13,5 @@ public:
     virtual string ToString()const;
     virtual bool Equals(const Object*)const;
     int GetValue()const;
+    void SetValue(int);
 };
